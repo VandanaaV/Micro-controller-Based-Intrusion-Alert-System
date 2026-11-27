@@ -16,6 +16,7 @@ The objectives of the Microcontroller Based Intrusion Alert project address mode
 
 # Result
 <img width="681" height="355" alt="image" src="https://github.com/user-attachments/assets/d0c3d7c0-4499-4fc7-9770-dfe8a74a5ef9" />
+
 The ultrasonic sensor continuously emits ultrasonic pulses and receives the reflected echo from nearby objects. The sensor calculates the time-of-flight of the signal, which is used by the Arduino Nano to determine the distance of an object. The Arduino Nano (microcontroller unit) processes the echo signal and computes the distance. The measured distance is continuously compared with a predefined threshold value to identify possible intrusion. If an object is detected within the threshold range, the system interprets it as an intrusion. The Arduino generates a digital signal at its output pins based on this condition. This control signal simultaneously activates the buzzer to produce an audible local alarm and sends commands to the GSM module. The GSM module processes these commands and sends an SMS alert (or call) to the predefined user number.
 
 # Conclusion
