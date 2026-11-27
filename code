@@ -1,0 +1,24 @@
+/* * PROJECT:  Microcontroller Based Intrusion Alert
+ * LOGIC: Active-Low Trigger (Sensor Output goes LOW when beam is broken)
+ */
+
+int sensorPin = 2; // Digital Input from IR Sensor
+int alarmPin = 13; // Output to Buzzer/LED
+
+void setup( {
+  pinMode(sensorPin, INPUT);
+  pinMode(alarmPin, OUTPUT);
+ Serial.begin(9600); // For real-time serial monitoring
+}
+
+void loop() {
+  int detection = digitalRead(sensorPin);
+  
+  if (detection == LOW) {
+    digitalWrite(alarmPin, HIGH); // Trigger Alarm
+    Serial.println("ALERT: INTRUSION DETECTED");
+  } else {
+    digitalWrite(alarmPin, LOW);  // Secure State
+  }
+  delay(100); 
+}
